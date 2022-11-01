@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: whats-new.html 
+keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, on-prem' 
+summary: Mit On-Premises-ONTAP-Clustern Neuerungen. 
+---
+= Was ist neu bei On-Prem ONTAP Clustern
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Neue Funktionen für On-Prem ONTAP Cluster Management in BlueXP (ehemals Cloud Manager)
+
+
+
+== 18. September 2022
+
+Die folgenden Änderungen wurden mit der Version 3.9.22 des Connectors eingeführt.
+
+
+
+=== Neue Übersichtsseite
+
+Mit der neuen Übersichtsseite möchten wir wichtige Details zu einem lokalen ONTAP Cluster bereitstellen. Beispielsweise können Sie jetzt Details wie Storage-Effizienz, Kapazitätsverteilung und Systeminformationen anzeigen.
+
+Sie können sich zudem Details zur Integration in andere NetApp Cloud-Services anzeigen lassen, die Daten-Tiering, Datenreplizierung und Backups ermöglichen.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-ontap-onprem/main/media/screenshot-overview.png["Ein Screenshot, der die Übersichtsseite für ein ONTAP-Cluster vor Ort anzeigt."]
+
+
+
+=== Seite „neu gestaltete Volumes“
+
+Die Seite Volumes wurde neu gestaltet, um eine Zusammenfassung der Volumes in einem Cluster zu bieten. Die Zusammenfassung gibt Ihnen die Gesamtzahl der Volumes, die Menge der bereitgestellten Kapazität, genutzte und reservierte Kapazität sowie die Menge der Tiered-Daten an.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-ontap-onprem/main/media/screenshot-volumes.png["Ein Screenshot, der die Volume-Seite für ein On-Prem ONTAP-Cluster zeigt"]
+
+
+
+== 7. Juni 2022
+
+Die folgende Änderung wurde mit der Version 3.9.19 des Connectors eingeführt.
+
+
+
+=== Neue Erweiterte Ansicht
+
+Wenn Sie das erweiterte Management eines ONTAP On-Premises-Clusters durchführen müssen, können Sie dazu ONTAP System Manager verwenden. Hierbei handelt es sich um eine Managementoberfläche, die zusammen mit einem ONTAP System bereitgestellt wird. Die System Manager Schnittstelle ist direkt in den Cloud Manager integriert, sodass Sie Cloud Manager nicht für erweitertes Management verlassen müssen.
+
+Diese erweiterte Ansicht ist als Vorschau für lokale ONTAP Cluster mit 9.10.0 oder höher verfügbar. Wir planen, diese Erfahrungen weiter zu verbessern und in zukünftigen Versionen Verbesserungen hinzuzufügen. Bitte senden Sie uns Ihr Feedback über den Product-Chat.
+
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-administer-advanced-view.html["Erfahren Sie mehr über die erweiterte Ansicht"].
+
+
+
+== 27 Februar 2022
+
+
+
+=== Eine Registerkarte „On-Premises ONTAP“ steht im Digital Wallet zur Verfügung.
+
+Sie können sich nun einen Bestand Ihrer lokalen ONTAP Cluster sowie deren Ablaufdatum für Hardware- und Serviceverträge anzeigen lassen. Weitere Details zu den Clustern sind ebenfalls verfügbar.
+
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#viewing-cluster-information-and-contract-details["Diese wichtigen Informationen für On-Premises-Cluster lassen sich anzeigen"]. Sie müssen ein NetApp Support Site Konto (NSS) für die Cluster besitzen, und die NSS-Zugangsdaten müssen an Ihr Cloud Manager Konto angehängt werden.
+
+
+
+== 11 Januar 2022
+
+
+
+=== Tags, die Sie zu Volumes auf On-Prem ONTAP Clustern hinzufügen, können mit dem Tagging Service verwendet werden.
+
+Tags, die Sie einem Volume hinzufügen, werden nun mit der Tagging-Funktion des Application Templates-Dienstes verknüpft, was Ihnen dabei hilft, das Management Ihrer Ressourcen zu organisieren und zu vereinfachen.
+
+
+
+== 28. November 2021
+
+
+
+=== Die Erstellung eines Volume-Assistenten für lokale ONTAP Cluster wurde vereinfacht
+
+Der Create Volume Wizard hat die Benutzerfreundlichkeit überarbeitet. Jetzt können Sie eine benutzerdefinierte Export-Richtlinie auswählen.
+
+
+
+== 8 März 2021
+
+
+
+=== ONTAP-Cluster vor Ort, die im Active IQ Service verfügbar sind
+
+* Wenn Active IQ die Liste Ihrer On-Prem-Cluster (basierend auf Ihrem NSS-Konto) anzeigt, können Sie auf eine Schaltfläche klicken, um zu klicken link:task-discovering-ontap.html#discovering-clusters-from-the-discovery-page["Ermitteln Sie den Cluster"^] Und fügen Sie es in den Canvas zu Cloud Manager ein. Auf diese Weise können Sie alle Storage-Systeme über Cloud Manager einfacher managen.
+* Wenn Active IQ feststellt, dass ein oder mehrere Cluster Firmware-Updates erfordern, können Sie auf die Schaltfläche zu klicken link:task-managing-ontap.html#downloading-new-disk-and-shelf-firmware["Laden Sie das Ansible Playbook herunter und aktualisieren Sie die Cluster-Firmware"^].
+* Eine neue link:task-managing-ontap.html#viewing-on-prem-workloads-that-are-candidates-for-the-cloud["Registerkarte „Cloud-Ready Workloads“"^] Auflistung der Workloads oder Volumes, die wir als ideal identifiziert haben, um von On-Premises-ONTAP-Clustern in die Cloud zu verschieben Durch die Verschiebung einiger dieser Volumes können Sie Ihre Kosten senken und die Performance und Ausfallsicherheit verbessern.
++
+Siehe link:https://www.netapp.com/knowledge-center/what-is-lift-and-shift["Was ist Lift and Shift?"]
+
+

@@ -1,0 +1,16 @@
+---
+layout: astra 
+sidebar: sidebar 
+permalink: index.html 
+lead: 'Manage your NetApp AFF and FAS systems through BlueXP (formerly Cloud Manager) to provision storage, replicate data, and configure critical cloud-based data services.' 
+summary: 'Managen Sie Ihre NetApp AFF- und FAS-Systeme über BlueXP (früher Cloud Manager), um Storage bereitzustellen, Daten zu replizieren und kritische Cloud-basierte Datenservices zu konfigurieren.' 
+---
+= Lokale ONTAP-Cluster-Dokumentation
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

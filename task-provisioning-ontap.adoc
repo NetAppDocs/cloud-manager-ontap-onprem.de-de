@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: task-provisioning-ontap.html 
+keywords: ontap, cluster, manage, provision, provisioning, volumes, discovering, fas, aff, creating volumes, adding volumes 
+summary: Nachdem Sie Ihren lokalen ONTAP-Cluster von BlueXP entdeckt haben, können Sie die Arbeitsumgebung für die Bereitstellung und das Management von Storage öffnen. 
+---
+= Management von Storage für ONTAP-Cluster vor Ort
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+Nachdem Sie Ihren lokalen ONTAP-Cluster von BlueXP entdeckt haben, können Sie die Arbeitsumgebung für die Bereitstellung und das Management von Storage öffnen.
+
+
+
+== Volumes werden erstellt
+
+Mit BlueXP können Sie NFS- oder CIFS-Volumes auf vorhandenen Aggregaten erstellen. Neue Aggregate können auf einem ONTAP-Cluster vor Ort nicht von BlueXP erstellt werden.
+
+Mit der BlueXP Funktion „Templates“ können Sie Volumes erstellen, die für bestimmte Workloads, wie Datenbanken oder Streaming-Services, optimiert sind. Wenn Ihr Unternehmen Volume-Vorlagen erstellt hat, die Sie verwenden sollten, folgen Sie den Anweisungen  volumes from templates,Diesen Schritten ausführen.
+
+.Schritte
+. Wählen Sie im Navigationsmenü die Option *Storage > Canvas* aus.
+. Doppelklicken Sie auf der Canvas-Seite auf den Namen des On-Prem ONTAP-Clusters, auf dem Sie Volumes bereitstellen möchten.
+. Klicken Sie Auf *Volumes > Volume Hinzufügen*.
+. Befolgen Sie die Schritte im Assistenten, um das Volume zu erstellen.
++
+.. *Details, Schutz & Tags*: Geben Sie Details zum Volume wie Name und Größe ein, wählen Sie eine Snapshot-Richtlinie aus und geben Sie ggf. Volume-Tags an.
++
+Einige der Felder auf dieser Seite sind selbsterklärend. In der folgenden Liste werden die Felder beschrieben, für die Sie möglicherweise Hinweise benötigen:
+
++
+[cols="2,6"]
+|===
+| Feld | Beschreibung 
+
+
+| Größe | Die maximale Größe, die Sie eingeben können, hängt weitgehend davon ab, ob Sie Thin Provisioning aktivieren, wodurch Sie ein Volume erstellen können, das größer ist als der derzeit verfügbare physische Storage. 
+
+
+| Snapshot-Richtlinie | Eine Snapshot Kopierrichtlinie gibt die Häufigkeit und Anzahl der automatisch erstellten NetApp Snapshot Kopien an. Bei einer NetApp Snapshot Kopie handelt es sich um ein zeitpunktgenaues Filesystem Image, das keine Performance-Einbußen aufweist und minimalen Storage erfordert. Sie können die Standardrichtlinie oder keine auswählen. Sie können keine für transiente Daten auswählen, z. B. tempdb für Microsoft SQL Server. 
+|===
+.. *Protokoll*: Wählen Sie das Protokoll für das Volume (NFS, CIFS oder iSCSI) und legen Sie dann die Zugriffskontrolle oder Berechtigungen für das Volume fest.
++
+Wenn Sie sich für CIFS entscheiden und ein Server noch nicht eingerichtet ist, werden Sie von BlueXP aufgefordert, einen CIFS-Server entweder über Active Directory oder eine Arbeitsgruppe einzurichten.
+
++
+In der folgenden Liste werden die Felder beschrieben, für die Sie möglicherweise Hinweise benötigen:
+
++
+[cols="2,6"]
+|===
+| Feld | Beschreibung 
+
+
+| Zugriffssteuerung | Eine NFS-Exportrichtlinie definiert die Clients im Subnetz, die auf das Volume zugreifen können. Standardmäßig gibt BlueXP einen Wert ein, der Zugriff auf alle Instanzen im Subnetz bietet. 
+
+
+| Berechtigungen und Benutzer/Gruppen | In diesen Feldern können Sie die Zugriffsebene für eine SMB-Freigabe für Benutzer und Gruppen (auch Zugriffssteuerungslisten oder ACLs) steuern. Sie können lokale oder domänenbasierte Windows-Benutzer oder -Gruppen oder UNIX-Benutzer oder -Gruppen angeben. Wenn Sie einen Domain-Windows-Benutzernamen angeben, müssen Sie die Domäne des Benutzers mit dem Format Domain\Benutzername einschließen. 
+|===
+.. *Nutzungsprofil*: Wählen Sie, ob Sie Speicher-Effizienzfunktionen auf dem Volume aktivieren oder deaktivieren möchten.
++
+ONTAP umfasst mehrere Storage-Effizienzfunktionen, mit denen Sie die benötigte Storage-Gesamtmenge reduzieren können. NetApp Storage-Effizienzfunktionen bieten folgende Vorteile:
+
++
+Thin Provisioning:: Bietet Hosts oder Benutzern mehr logischen Storage als in Ihrem physischen Storage-Pool. Anstatt Storage vorab zuzuweisen, wird jedem Volume beim Schreiben von Daten dynamisch Speicherplatz zugewiesen.
+Deduplizierung:: Verbessert die Effizienz, indem identische Datenblöcke lokalisiert und durch Verweise auf einen einzelnen gemeinsam genutzten Block ersetzt werden. Durch diese Technik werden die Storage-Kapazitätsanforderungen reduziert, da redundante Datenblöcke im selben Volume eliminiert werden.
+Komprimierung:: Reduziert die physische Kapazität, die zum Speichern von Daten erforderlich ist, indem Daten in einem Volume auf primärem, sekundärem und Archiv-Storage komprimiert werden.
+
+
+.. *Review*: Überprüfen Sie die Details über die Lautstärke und klicken Sie dann auf *Hinzufügen*.
+
+
+
+
+
+
+== Erstellen von Volumes aus Vorlagen
+
+Wenn Ihr Unternehmen On-Premises ONTAP Volume-Vorlagen erstellt hat, damit Sie Volumes implementieren können, die für die Workload-Anforderungen bestimmter Applikationen optimiert sind, befolgen Sie diese Schritte in diesem Abschnitt.
+
+Die Vorlage sollte Ihnen die Arbeit erleichtern, da bestimmte Volume-Parameter bereits in der Vorlage definiert werden, z. B. Festplattentyp, -Größe, -Protokoll, -Snapshot-Richtlinie usw. Wenn ein Parameter bereits vordefiniert ist, können Sie einfach zum nächsten Volume-Parameter springen.
+
+
+NOTE: NFS- oder CIFS-Volumes können nur mit Vorlagen erstellt werden.
+
+.Schritte
+. Klicken Sie auf der Seite „Übersicht“ auf den Namen des On-Premises-ONTAP-Systems, auf dem ein Volume bereitgestellt werden soll.
+. Klicken Sie Auf image:screenshot_gallery_options.gif["Ein Symbol mit drei Punkten."] > *Volumen Aus Vorlage Hinzufügen*.
++
+image:screenshot_template_add_vol_ontap.png["Ein Screenshot, der zeigt, wie ein neues Volume aus einer Vorlage hinzugefügt wird."]
+
+. Wählen Sie auf der Seite _Vorlage auswählen_ die Vorlage aus, die Sie zum Erstellen des Volumes verwenden möchten, und klicken Sie auf *Weiter*.
++
+image:screenshot_select_template_ontap.png["Ein Screenshot der verfügbaren Anwendungsvorlagen."]
+
++
+Die Seite _Define Parameters_ wird angezeigt.
+
++
+image:screenshot_define_ontap_vol_from_template.png["Ein Screenshot mit einer leeren Vorlage, die Sie ausfüllen müssen, um ein Volume zu erstellen."]
+
++
+*Hinweis:* Sie können das Kontrollkästchen *schreibgeschützte Parameter anzeigen* anklicken, um alle Felder anzuzeigen, die durch die Vorlage gesperrt wurden, wenn Sie die Werte für diese Parameter anzeigen möchten. Standardmäßig werden diese vordefinierten Felder ausgeblendet. Es werden nur die Felder angezeigt, die Sie ausfüllen müssen.
+
+. Im Bereich _context_ wird die Arbeitsumgebung mit dem Namen der Arbeitsumgebung ausgefüllt, mit der Sie begonnen haben. Sie müssen das *Storage VM* und *Aggregat* auswählen, wo das Volume erstellt wird.
+. Fügen Sie Werte für alle Parameter hinzu, die nicht hartcodiert sind. Siehe  volumes,Volumes werden erstellt Details zu allen Parametern, die für die Implementierung eines On-Premises-ONTAP-Volume erforderlich sind, sind erforderlich.
+. Klicken Sie auf *Ausführungsvorlage*, nachdem Sie alle für dieses Volume erforderlichen Parameter definiert haben.
+
+
+BlueXP stellt das Volume bereit und zeigt eine Seite an, so dass Sie den Fortschritt sehen können.
+
+image:screenshot_template_creating_resource_ontap.png["Ein Screenshot zeigt den Fortschritt der Erstellung Ihres neuen Volumes aus der Vorlage."]
+
+Dann wird das neue Volume zur Arbeitsumgebung hinzugefügt.
+
+Außerdem werden, wenn sekundäre Aktionen in der Vorlage implementiert werden, z. B. wenn Sie Cloud Backup für das Volume aktivieren, diese Aktion ausgeführt.
+
+Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner, und überprüfen Sie, ob diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.
+
+
+
+== Datenreplizierung
+
+Sie können Daten zwischen Cloud Volumes ONTAP Systemen und ONTAP Clustern replizieren, indem Sie sich für eine einmalige Datenreplizierung entscheiden, mit der Sie Daten in die und aus der Cloud verschieben können, oder für einen wiederkehrenden Zeitplan, der zur Disaster Recovery oder langfristigen Aufbewahrung beitragen kann.
+
+https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.html["Erfahren Sie, wie Daten repliziert werden"^]
+
+
+
+== Daten werden gesichert
+
+Mit Cloud Backup lassen sich Daten-Backups von lokalen ONTAP Systemen auf kostengünstigen Objekt-Storage in der Cloud erstellen. Dieser Service bietet Backup- und Restore-Funktionen zum Schutz und zur langfristigen Archivierung Ihrer On-Premises- und Cloud-Daten.
+
+https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html["Daten-Backups in der Cloud erstellen und"^]
+
+
+
+== Scannen, Zuordnen und Klassifizieren Sie Ihre Daten
+
+Cloud Data Sense kann die On-Premises-Cluster Ihres Unternehmens scannen, um Daten zuzuordnen und zu klassifizieren, und private Informationen zu identifizieren. Auf diese Weise reduzieren Sie Sicherheits- und Compliance-Risiken, senken die Storage-Kosten und unterstützen Ihre Datenmigrationsprojekte.
+
+https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html["Lernen Sie, Ihre Daten zu scannen, zu mappen und zu klassifizieren"^]
+
+
+
+== Daten-Tiering in die Cloud
+
+Erweitern Sie Ihr Datacenter in die Cloud, indem Sie inaktive Daten automatisch von ONTAP Clustern auf Objekt-Storage mithilfe von Cloud-Tiering verschieben.
+
+https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html["Tiering von Daten in die Cloud –"^]

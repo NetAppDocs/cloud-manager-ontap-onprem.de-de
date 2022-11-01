@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: concept-aiq-digital-advisor.html 
+keywords: concepts, active iq digital advisor, ontap 
+summary: Active IQ Digital Advisor ist in die Benutzeroberfläche von BlueXP integriert, sodass Sie den Betrieb, die Sicherheit und die Leistung Ihrer ONTAP Cluster über eine zentrale Konsole optimieren können. 
+---
+= Optimieren Sie Ihre Cluster mit Digital Advisor
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+https://www.netapp.com/services/support/active-iq/["Digital Advisor"^] (Ehemals Active IQ) ist in die Benutzeroberfläche von BlueXP integriert, sodass Sie den Betrieb, die Sicherheit und die Performance Ihrer ONTAP Cluster über eine zentrale Konsole optimieren können.
+
+
+
+== Funktionen
+
+Mit Digital Advisor können Sie den Gesamtstatus Ihres Storage-Systems, allgemeine Informationen zum Systemzustand, Inventar, Planung, Upgrades und wertvolle Einblicke auf Uhrlistenebene anzeigen.
+
+* Analyse und Optimierung des Zustands Ihrer Storage-Systeme
+* Sie erhalten Einblick in alle Risiken für Ihre Storage-Systeme und die Maßnahmen zur Risikominderung
+* Analysieren Sie die Performance Ihrer Speichergeräte, indem Sie sich das grafische Format der Performance-Daten anzeigen lassen
+* Erfahren Sie mehr über Systeme, die mit ihrer Kapazität von mehr als 90 % oder annähernd 90 % ausgelastet sind
+* Informationen über Hardware und Software, die innerhalb der nächsten 6 Monate abgelaufen sind oder deren Ablauf nahe steht
+* Aktualisieren Sie die ONTAP Firmware Ihres Storage-Systems mithilfe von Ansible
+
+
+
+
+== Unterstützte ONTAP-Systeme
+
+Digital Advisor bietet Informationen zu allen lokalen ONTAP-Systemen und Cloud Volumes ONTAP-Systemen in Ihrem NSS-Konto.
+
+
+
+== Kosten
+
+Die Verwendung dieses Services ist kostenlos über BlueXP.
+
+
+
+== Funktionsweise von Digital Advisor mit BlueXP
+
+Siehe https://docs.netapp.com/us-en/active-iq/digital-advisor-integration-with-bluexp.html["Digital Advisor Dokumentation"^] Entsprechende Details.

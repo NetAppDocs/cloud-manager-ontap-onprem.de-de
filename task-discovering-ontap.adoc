@@ -114,7 +114,7 @@ TIP: Wenn Sie auf System Manager auf einem lokalen ONTAP-Cluster mit 9.12.1 oder
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-overview.html["Erfahren Sie, wie Sie BlueXP zum Einsatz bringen"^]
 
-* Der lokale ONTAP-Cluster muss 9.12.1 oder höher mit Konnektivität zum BlueXP-Dienst (\https://bluexp.netapp.com) laufen.
+* Der lokale ONTAP Cluster muss 9.12.1 oder höher mit Konnektivität zum BlueXP Service laufen.
 * Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto.
 +
 BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewallrichtlinien verwenden, muss der ONTAP-Cluster eingehenden HTTPS-Zugriff über Port 443 ermöglichen.

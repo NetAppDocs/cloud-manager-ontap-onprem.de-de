@@ -193,7 +193,7 @@ Die rollenbasierte Zugriffssteuerung über System Manager wird nicht unterstütz
 
 
 
-=== Erste Schritte
+=== Verwenden der erweiterten Ansicht (System Manager)
 
 Öffnen Sie eine lokale ONTAP Arbeitsumgebung, und klicken Sie auf die Option Erweiterte Ansicht.
 

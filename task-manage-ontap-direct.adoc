@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-manage-ontap-direct.html 
+keywords: direct discovery, direct, system manager, local, local discovery 
+summary: Wenn Sie Ihren lokalen ONTAP-Cluster direkt ohne Connector entdeckt haben, können Sie mit System Manager in die Arbeitsumgebung eingeben, in der das Cluster verwaltet werden soll. 
+---
+= Managen Sie lokale ONTAP-Cluster, die direkt entdeckt wurden
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn Sie Ihren lokalen ONTAP-Cluster direkt ohne Connector entdeckt haben, können Sie die Arbeitsumgebung öffnen, in der das Cluster gemanagt werden soll, mit System Manager.
+
+Die folgenden System Manager Funktionen sind nicht verfügbar:
+
+* Globale Suche
+* Die Integration von Digital Advisor (ehemals Active IQ) umfasst Risiken und Informationen zur Problembehebung, den Verlauf der Kapazitätsauslastung, Benachrichtigungen zur Firmware-Verfügbarkeit sowie die Möglichkeit, offene Support-Cases anzuzeigen
+* Benutzeroberflächeneinstellungen
+* Cloud-Widget
+* Manuelle Upgrades von ONTAP und Firmware
+* Integration von Cloud-Backup
+
+
+.Schritte
+. Doppelklicken Sie auf der Seite „Arbeitsfläche“ auf den Namen einer ONTAP-Arbeitsumgebung vor Ort.
+. Verwenden Sie System Manager zum Verwalten von ONTAP.
++
+Wenn Sie Hilfe bei der Verwendung von System Manager mit ONTAP benötigen, finden Sie unter https://docs.netapp.com/us-en/ontap/index.html["ONTAP-Dokumentation"^] Schritt-für-Schritt-Anleitungen. Hier sind einige Links, die helfen könnten:
+
++
+** https://docs.netapp.com/us-en/ontap/volume-admin-overview-concept.html["Volume- und LUN-Management"^]
+** https://docs.netapp.com/us-en/ontap/network-manage-overview-concept.html["Netzwerkmanagement"^]
+** https://docs.netapp.com/us-en/ontap/concept_dp_overview.html["Datensicherung"^]
+
+
+

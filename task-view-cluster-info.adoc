@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: task-view-cluster-info.html 
+keywords: software contract, hardware contract, contracts, expiration date, expired, software contract 
+summary: Mit Digital Wallet können Sie Cluster-Details sowie den Hardware- und Software-Vertragsstatus anzeigen. 
+---
+= Cluster-Informationen und Vertragsdetails
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sie können die _Digital Wallet_ verwenden, um Cluster-Details sowie den Hardware- und Software-Vertragsstatus anzuzeigen.
+
+.Schritte
+. Wählen Sie im Navigationsmenü BlueXP die Option *Governance > Digital Wallet* aus.
+. Klicken Sie im *Digitalkonto* auf die Registerkarte *On-Premise ONTAP*.
++
+Das Ablaufdatum von Softwareverträgen und Hardwareverträgen wird für die einzelnen Cluster in der Zeile angezeigt.
+
+. Wenn der Vertrag kurz vor dem Ablaufdatum steht oder abgelaufen ist, können Sie auf das Chat-Symbol rechts unten bei BlueXP klicken, um eine Vertragsverlängerung anzufordern.
+. Klicken Sie bei Clustern, die Sie über zusätzliche Details informieren möchten, auf image:button_down_caret.png["Ein nach unten fahrlässiges Symbol"] Um die Cluster-Informationen zu erweitern.
++
+image:screenshot_digital_wallet_license_info.png["Ein Screenshot, wie die Cluster-Details erweitert werden, sodass Sie Informationen zu Cluster-Lizenzen anzeigen können."]
+
+

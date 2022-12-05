@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-provisioning-ontap.html 
-keywords: ontap, cluster, manage, provision, provisioning, volumes, discovering, fas, aff, creating volumes, adding volumes 
-summary: Nachdem Sie Ihren lokalen ONTAP-Cluster von BlueXP entdeckt haben, können Sie die Arbeitsumgebung für die Bereitstellung und das Management von Storage öffnen. 
+permalink: task-manage-ontap-connector.html 
+keywords: system manager, advanced view, access system manager, load system manager, use system manager 
+summary: Wenn Sie das erweiterte Management eines ONTAP On-Premises-Clusters durchführen müssen, können Sie dazu ONTAP System Manager verwenden. Hierbei handelt es sich um eine Managementoberfläche, die zusammen mit einem ONTAP System bereitgestellt wird. Die System Manager Schnittstelle ist direkt in BlueXP integriert, sodass Sie BlueXP nicht für erweitertes Management verlassen müssen. 
 ---
-= Management von Storage für ONTAP-Cluster vor Ort
+= Managen Sie lokale ONTAP-Cluster, die über einen Connector erkannt wurden
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -13,13 +13,20 @@ summary: Nachdem Sie Ihren lokalen ONTAP-Cluster von BlueXP entdeckt haben, kön
 :imagesdir: ./media/
 
 
-Nachdem Sie Ihren lokalen ONTAP-Cluster von BlueXP entdeckt haben, können Sie die Arbeitsumgebung für die Bereitstellung und das Management von Storage öffnen.
+[role="lead"]
+Wenn Sie einen ONTAP-Cluster vor Ort mithilfe eines Connectors entdeckt haben, können Sie Volumes aus der Standardansicht erstellen, System Manager in der Erweiterten Ansicht verwenden und BlueXP-Datenservices aktivieren.
 
 
 
-== Volumes werden erstellt
+== Erstellen Sie Volumes in der Ansicht Standard
 
-Mit BlueXP können Sie NFS- oder CIFS-Volumes auf vorhandenen Aggregaten erstellen. Neue Aggregate können auf einem ONTAP-Cluster vor Ort nicht von BlueXP erstellt werden.
+Nachdem Sie Ihren lokalen ONTAP-Cluster von BlueXP mithilfe eines Connectors entdeckt haben, können Sie die Arbeitsumgebung für die Bereitstellung und das Management von Storage öffnen.
+
+
+
+=== Volumes erstellen
+
+Mit BlueXP können Sie NFS- oder CIFS-Volumes auf vorhandenen Aggregaten erstellen. Neue Aggregate können auf einem lokalen ONTAP-Cluster nicht über die BlueXP-Standardansicht erstellt werden. Zum Erstellen von Aggregaten müssen Sie die Ansicht „Erweitert“ verwenden.
 
 Mit der BlueXP Funktion „Templates“ können Sie Volumes erstellen, die für bestimmte Workloads, wie Datenbanken oder Streaming-Services, optimiert sind. Wenn Ihr Unternehmen Volume-Vorlagen erstellt hat, die Sie verwenden sollten, folgen Sie den Anweisungen  volumes from templates,Diesen Schritten ausführen.
 
@@ -62,16 +69,7 @@ In der folgenden Liste werden die Felder beschrieben, für die Sie möglicherwei
 
 | Berechtigungen und Benutzer/Gruppen | In diesen Feldern können Sie die Zugriffsebene für eine SMB-Freigabe für Benutzer und Gruppen (auch Zugriffssteuerungslisten oder ACLs) steuern. Sie können lokale oder domänenbasierte Windows-Benutzer oder -Gruppen oder UNIX-Benutzer oder -Gruppen angeben. Wenn Sie einen Domain-Windows-Benutzernamen angeben, müssen Sie die Domäne des Benutzers mit dem Format Domain\Benutzername einschließen. 
 |===
-.. *Nutzungsprofil*: Wählen Sie, ob Sie Speicher-Effizienzfunktionen auf dem Volume aktivieren oder deaktivieren möchten.
-+
-ONTAP umfasst mehrere Storage-Effizienzfunktionen, mit denen Sie die benötigte Storage-Gesamtmenge reduzieren können. NetApp Storage-Effizienzfunktionen bieten folgende Vorteile:
-
-+
-Thin Provisioning:: Bietet Hosts oder Benutzern mehr logischen Storage als in Ihrem physischen Storage-Pool. Anstatt Storage vorab zuzuweisen, wird jedem Volume beim Schreiben von Daten dynamisch Speicherplatz zugewiesen.
-Deduplizierung:: Verbessert die Effizienz, indem identische Datenblöcke lokalisiert und durch Verweise auf einen einzelnen gemeinsam genutzten Block ersetzt werden. Durch diese Technik werden die Storage-Kapazitätsanforderungen reduziert, da redundante Datenblöcke im selben Volume eliminiert werden.
-Komprimierung:: Reduziert die physische Kapazität, die zum Speichern von Daten erforderlich ist, indem Daten in einem Volume auf primärem, sekundärem und Archiv-Storage komprimiert werden.
-
-
+.. *Nutzungsprofil*: Wählen Sie, ob Sie Storage-Effizienzfunktionen auf dem Volume aktivieren oder deaktivieren möchten, um die benötigte Gesamtmenge an Speicherplatz zu verringern.
 .. *Review*: Überprüfen Sie die Details über die Lautstärke und klicken Sie dann auf *Hinzufügen*.
 
 
@@ -79,7 +77,7 @@ Komprimierung:: Reduziert die physische Kapazität, die zum Speichern von Daten 
 
 
 
-== Erstellen von Volumes aus Vorlagen
+=== Erstellen Sie Volumes aus Vorlagen
 
 Wenn Ihr Unternehmen On-Premises ONTAP Volume-Vorlagen erstellt hat, damit Sie Volumes implementieren können, die für die Workload-Anforderungen bestimmter Applikationen optimiert sind, befolgen Sie diese Schritte in diesem Abschnitt.
 
@@ -108,7 +106,10 @@ image:screenshot_define_ontap_vol_from_template.png["Ein Screenshot mit einer le
 *Hinweis:* Sie können das Kontrollkästchen *schreibgeschützte Parameter anzeigen* anklicken, um alle Felder anzuzeigen, die durch die Vorlage gesperrt wurden, wenn Sie die Werte für diese Parameter anzeigen möchten. Standardmäßig werden diese vordefinierten Felder ausgeblendet. Es werden nur die Felder angezeigt, die Sie ausfüllen müssen.
 
 . Im Bereich _context_ wird die Arbeitsumgebung mit dem Namen der Arbeitsumgebung ausgefüllt, mit der Sie begonnen haben. Sie müssen das *Storage VM* und *Aggregat* auswählen, wo das Volume erstellt wird.
-. Fügen Sie Werte für alle Parameter hinzu, die nicht hartcodiert sind. Siehe  volumes,Volumes werden erstellt Details zu allen Parametern, die für die Implementierung eines On-Premises-ONTAP-Volume erforderlich sind, sind erforderlich.
+. Fügen Sie Werte für alle Parameter hinzu, die nicht hartcodiert sind.
++
+ volumes,Erfahren Sie mehr über die Parameter, die Sie zum Erstellen des Volumes benötigen.
+
 . Klicken Sie auf *Ausführungsvorlage*, nachdem Sie alle für dieses Volume erforderlichen Parameter definiert haben.
 
 
@@ -124,7 +125,112 @@ Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gr
 
 
 
-== Datenreplizierung
+== ONTAP mit der erweiterten Ansicht verwalten
+
+Wenn Sie erweitertes Management eines lokalen ONTAP-Clusters durchführen möchten, können Sie dies mit ONTAP System Manager durchführen. Dabei handelt es sich um eine Managementoberfläche, die zusammen mit einem ONTAP System bereitgestellt wird. Die System Manager Schnittstelle ist direkt in BlueXP integriert, sodass Sie BlueXP nicht für erweitertes Management verlassen müssen.
+
+Diese erweiterte Ansicht ist als Vorschau verfügbar. Wir planen, diese Erfahrungen weiter zu verbessern und in zukünftigen Versionen Verbesserungen hinzuzufügen. Bitte senden Sie uns Ihr Feedback über den Product-Chat.
+
+
+
+=== Funktionen
+
+Die erweiterte Ansicht in BlueXP bietet Ihnen zusätzliche Verwaltungsfunktionen:
+
+* Erweitertes Storage-Management
++
+Managen von Konsistenzgruppen, Shares, qtrees, Quotas und Storage-VMs
+
+* Netzwerkmanagement
++
+Managen Sie IPspaces, Netzwerkschnittstellen, Portsätze und ethernet-Ports.
+
+* Ereignisse und Jobs
++
+Anzeige von Ereignisprotokollen, Systemwarnungen, Jobs und Prüfprotokollen.
+
+* Erweiterte Datensicherung
++
+Sicherung von Storage VMs, LUNs und Konsistenzgruppen
+
+* Host-Management
++
+Richten Sie SAN-Initiatorgruppen und NFS-Clients ein.
+
+
+
+
+
+=== Unterstützte Konfigurationen
+
+Das erweiterte Management über System Manager wird von lokalen ONTAP Clustern mit 9.10.0 oder höher unterstützt.
+
+Die Integration von System Manager wird in GovCloud Regionen oder Regionen ohne Outbound-Internetzugang nicht unterstützt.
+
+
+
+=== Einschränkungen
+
+Einige System Manager-Funktionen werden bei lokalen ONTAP-Clustern nicht unterstützt, wenn Sie die erweiterte Ansicht in BlueXP verwenden:
+
+* Cluster-Einrichtung
++
+Nachdem Sie die Management-IP-Adresse festgelegt und das Admin-Passwort für einen On-Prem ONTAP-Cluster konfiguriert haben, können Sie das Cluster in BlueXP erkennen und dann mit der Cluster-Einrichtung in der erweiterten Ansicht fortfahren.
+
+* Cloud-Backup-Aktivierung
++
+Cloud Backup in einem lokalen Cluster direkt aus dem Cloud Backup aktivieren https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html["Erste Schritte"^].
+
+* On-Demand-Upgrades
++
+Firmware und Software können nicht nach Bedarf aktualisiert werden.
+
+* Rollenbasierte Zugriffssteuerung
++
+Die rollenbasierte Zugriffssteuerung über System Manager wird nicht unterstützt.
+
+
+
+
+
+=== Erste Schritte
+
+Öffnen Sie eine lokale ONTAP Arbeitsumgebung, und klicken Sie auf die Option Erweiterte Ansicht.
+
+.Schritte
+. Doppelklicken Sie auf der Seite „Arbeitsfläche“ auf den Namen einer ONTAP-Arbeitsumgebung vor Ort.
+. Klicken Sie oben rechts auf *zur erweiterten Ansicht wechseln*.
++
+image:screenshot-advanced-view.png["Ein Screenshot einer lokalen ONTAP Arbeitsumgebung, in der die Option zur erweiterten Ansicht wechseln angezeigt wird."]
+
+. Wenn die Bestätigungsmeldung angezeigt wird, lesen Sie sie durch und klicken Sie auf *Schließen*.
+. Verwenden Sie System Manager zum Verwalten von ONTAP.
+. Klicken Sie bei Bedarf auf *zur Standardansicht wechseln*, um zur Standardverwaltung über BlueXP zurückzukehren.
++
+image:screenshot-standard-view.png["Ein Screenshot einer lokalen ONTAP Arbeitsumgebung, in der die Option zur Standardansicht wechseln angezeigt wird."]
+
+
+
+
+
+=== Holen Sie sich Hilfe mit System Manager
+
+Wenn Sie Hilfe bei der Verwendung von System Manager mit ONTAP benötigen, finden Sie unter https://docs.netapp.com/us-en/ontap/index.html["ONTAP-Dokumentation"^] Schritt-für-Schritt-Anleitungen. Hier sind einige Links, die helfen könnten:
+
+* https://docs.netapp.com/us-en/ontap/volume-admin-overview-concept.html["Volume- und LUN-Management"^]
+* https://docs.netapp.com/us-en/ontap/network-manage-overview-concept.html["Netzwerkmanagement"^]
+* https://docs.netapp.com/us-en/ontap/concept_dp_overview.html["Datensicherung"^]
+
+
+
+
+== Aktivieren Sie BlueXP-Datenservices
+
+Nutzen Sie BlueXP Datenservices in Ihren Arbeitsumgebungen, um Daten zu replizieren, zu sichern, zu scannen und zu Ebenen.
+
+
+
+=== Datenreplizierung
 
 Sie können Daten zwischen Cloud Volumes ONTAP Systemen und ONTAP Clustern replizieren, indem Sie sich für eine einmalige Datenreplizierung entscheiden, mit der Sie Daten in die und aus der Cloud verschieben können, oder für einen wiederkehrenden Zeitplan, der zur Disaster Recovery oder langfristigen Aufbewahrung beitragen kann.
 
@@ -132,7 +238,7 @@ https://docs.netapp.com/us-en/cloud-manager-replication/task-replicating-data.ht
 
 
 
-== Daten werden gesichert
+=== Daten sichern
 
 Mit Cloud Backup lassen sich Daten-Backups von lokalen ONTAP Systemen auf kostengünstigen Objekt-Storage in der Cloud erstellen. Dieser Service bietet Backup- und Restore-Funktionen zum Schutz und zur langfristigen Archivierung Ihrer On-Premises- und Cloud-Daten.
 
@@ -140,7 +246,7 @@ https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-clo
 
 
 
-== Scannen, Zuordnen und Klassifizieren Sie Ihre Daten
+=== Scannen, Zuordnen und Klassifizieren Sie Ihre Daten
 
 Cloud Data Sense kann die On-Premises-Cluster Ihres Unternehmens scannen, um Daten zuzuordnen und zu klassifizieren, und private Informationen zu identifizieren. Auf diese Weise reduzieren Sie Sicherheits- und Compliance-Risiken, senken die Storage-Kosten und unterstützen Ihre Datenmigrationsprojekte.
 
@@ -148,7 +254,7 @@ https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.
 
 
 
-== Daten-Tiering in die Cloud
+=== Tiering von Daten in die Cloud
 
 Erweitern Sie Ihr Datacenter in die Cloud, indem Sie inaktive Daten automatisch von ONTAP Clustern auf Objekt-Storage mithilfe von Cloud-Tiering verschieben.
 

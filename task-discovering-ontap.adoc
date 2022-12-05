@@ -4,7 +4,7 @@ permalink: task-discovering-ontap.html
 keywords: ontap, cluster, discover, manage, discovering, fas, aff, discover onprem, discover aff cluster, discover cluster, add cluster, active iq, digital wallet 
 summary: BlueXP kann die ONTAP-Cluster in Ihrer On-Premises-Umgebung, in einer NetApp Private Storage Konfiguration und in der IBM Cloud erkennen. Wenn Sie dem BlueXP Canvas On-Prem-Cluster hinzufügen, können Sie diese Cluster mit denselben Tools verwalten wie Ihr Cloud Volumes ONTAP und andere Cloud-Speicherlösungen. 
 ---
-= Erkennen von ONTAP-Clustern vor Ort
+= Erkennen von ONTAP Clustern vor Ort
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -13,15 +13,48 @@ summary: BlueXP kann die ONTAP-Cluster in Ihrer On-Premises-Umgebung, in einer N
 :imagesdir: ./media/
 
 
-BlueXP kann die ONTAP-Cluster in Ihrer On-Premises-Umgebung, in einer NetApp Private Storage Konfiguration und in der IBM Cloud erkennen. Wenn Sie dem BlueXP Canvas On-Prem-Cluster hinzufügen, können Sie diese Cluster mit denselben Tools verwalten wie Ihr Cloud Volumes ONTAP und andere Cloud-Speicherlösungen.
-
-Neben der Bereitstellung von Speicher auf diesen Systemen, macht es das Hinzufügen dieser Systeme zu BlueXP auch einfach, Hardware-und Software-Vertrag Statusinformationen in der Digital Wallet anzuzeigen und kritische Cloud-basierte Dienste für diese Cluster zu konfigurieren. Das umfasst auch die Replizierung von Daten in der Cloud, die Sicherung von Daten in der Cloud, das Tiering selten genutzter Daten in der Cloud und die Ausführung von Compliance-Scans für diese Daten.
-
+[role="lead"]
+Entdecken Sie On-Prem ONTAP-Cluster von BlueXP, damit Sie mit dem ONTAP System Manager, der über BlueXP erhältlich ist, Volumes verwalten und erweiterte Verwaltungsaufgaben ausführen können, damit Sie BlueXP nicht für erweitertes Management verlassen müssen.
 
 
-== Anforderungen
 
-* Ein Connector, der bei einem Cloud-Provider oder vor Ort installiert ist.
+== Discovery- und Management-Optionen
+
+BlueXP bietet zwei Möglichkeiten zum Erkennen und Managen Ihrer lokalen ONTAP-Cluster:
+
+Erkennung über einen Konnektor:: Diese Option ermöglicht das Verwalten des Clusters mithilfe der folgenden Funktionen:
++
+--
+* Die Ansicht „Standard“, die grundlegende Volume-Vorgänge bereitstellt
+* Die Ansicht „Erweitert“, die Management über System Manager bereitstellt
+* Integration in BlueXP-Datenservices für Datenreplizierung, Backup und Recovery, Datenklassifizierung und Daten-Tiering
+
+
+Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein.
+
+--
+Direkte Bestandsaufnahme:: Mit dieser Option können Sie das Cluster mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar.
++
+--
+Für diese Option ist kein Connector erforderlich.
+
+--
+
+
+Sobald die Cluster entdeckt wurden, stehen sie als Arbeitsumgebung auf dem BlueXP Canvas zur Verfügung.
+
+
+
+== Cluster mithilfe eines Connectors erkennen
+
+Entdecken Sie Ihre ONTAP-Cluster vor Ort mit einem Connector, damit Sie von allen Managementfunktionen profitieren können, die BlueXP bietet.
+
+.Anforderungen
+* Sie sollten mit BlueXP loslegen, was die Anmeldung und Einrichtung eines Kontos umfasst.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-overview.html["Erfahren Sie, wie Sie BlueXP zum Einsatz bringen"^]
+
+* Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein.
 +
 Wenn kalte Daten in die Cloud verschoben werden sollen, sollten Sie die Anforderungen für den Connector prüfen, je nachdem, wo Sie kalte Daten Tiering möchten.
 
@@ -31,7 +64,7 @@ Wenn kalte Daten in die Cloud verschoben werden sollen, sollten Sie die Anforder
 ** https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html["Erfahren Sie mehr über Cloud Tiering"^]
 
 
-* Die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto zum Hinzufügen des Clusters zu BlueXP.
+* Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto, um das Cluster zu BlueXP hinzuzufügen.
 +
 BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewall-Richtlinien verwenden, müssen diese die folgenden Anforderungen erfüllen:
 
@@ -46,96 +79,15 @@ Die standardmäßige "mgmt"-Firewall-Richtlinie ermöglicht eingehenden HTTPS-Zu
 
 
 
-* Einen gültigen Satz von NetApp Support Site Zugangsdaten. Informieren Sie sich darüber https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html["Fügen Sie das NSS-Konto zu BlueXP hinzu"^].
 
-
-
-
-== Anzeige ermittelte und nicht erkannte On-Premises-Cluster
-
-Sie können den _Digital Wallet_-Dienst in BlueXP verwenden, um Ihre On-Prem-ONTAP-Cluster anzuzeigen, zu ermitteln und zu verwalten, die im Rahmen eines Support-Vertrags stehen.
 
 .Schritte
-. Wählen Sie im Navigationsmenü BlueXP die Option *Governance > Digital Wallet* aus.
-. Klicken Sie auf die Registerkarte *On-Premises ONTAP*.
-+
-image:screenshot_digital_wallet_onprem_main.png["Ein Screenshot der Seite „Digitale Geldbörse“ für On-Premises ONTAP Cluster."]
-
-+
-Ihre ONTAP-Cluster werden mit dem Status angezeigt, ob sie in BlueXP entdeckt wurden.
-
-+
-Wenn Sie dazu aufgefordert werden, zuerst die Zugangsdaten für Ihr NSS Konto (NetApp Support Site) einzugeben, geben Sie diese in das Support Dashboard ein. Nachdem Sie das Konto hinzugefügt haben, werden die in diesem Konto enthaltenen Cluster angezeigt.
-
-
-
-
-
-== Anzeigen von Cluster-Informationen und Vertragsdetails
-
-Sie können die _Digital Wallet_ verwenden, um Cluster-Details sowie den Hardware- und Software-Vertragsstatus anzuzeigen.
-
-.Schritte
-. Wählen Sie im Navigationsmenü BlueXP die Option *Governance > Digital Wallet* aus.
-. Klicken Sie im *Digitalkonto* auf die Registerkarte *On-Premise ONTAP*.
-+
-Das Ablaufdatum von Softwareverträgen und Hardwareverträgen wird für die einzelnen Cluster in der Zeile angezeigt.
-
-. Wenn der Vertrag kurz vor dem Ablaufdatum steht oder abgelaufen ist, können Sie auf das Chat-Symbol rechts unten bei BlueXP klicken, um eine Vertragsverlängerung anzufordern.
-. Klicken Sie bei Clustern, die Sie über zusätzliche Details informieren möchten, auf image:button_down_caret.png["Ein nach unten fahrlässiges Symbol"] Um die Cluster-Informationen zu erweitern.
-+
-image:screenshot_digital_wallet_license_info.png["Ein Screenshot, wie die Cluster-Details erweitert werden, sodass Sie Informationen zu Cluster-Lizenzen anzeigen können."]
-
-
-
-
-
-== Erkennen von On-Premises-Clustern von BlueXP
-
-Entdecken Sie On-Prem ONTAP Cluster in BlueXP vom _Digital Wallet_ oder vom _Canvas_. Sobald diese erkannt wurden, stehen sie als Arbeitsumgebung in BlueXP zur Verfügung, sodass Sie den Cluster verwalten können.
-
-
-
-=== Ermitteln von Clustern über das Digital Wallet
-
-Sie können Ihre ONTAP-Cluster über die Digitale Geldbörse ermitteln und als Arbeitsumgebung hinzufügen.
-
-.Schritte
-. Wählen Sie im Navigationsmenü BlueXP die Option *Governance > Digital Wallet* aus.
-. Klicken Sie auf der Registerkarte *Digital Wallet* auf die Registerkarte *On-Premise ONTAP*.
-+
-image:screenshot_digital_wallet_clusters.png["Einen Screenshot der On-Premises ONTAP Seite mit allen Clustern in Ihrem NSS-Konto"]
-
-. Klicken Sie auf *Discover* für den Cluster, den Sie über BlueXP verwalten möchten.
-. Geben Sie auf der Seite _Discover ONTAP Cluster_ das Kennwort für das Administratorkonto ein und klicken Sie auf *Discover*.
-+
-image:screenshot_discover_ontap_wallet.png["Ein Screenshot, der ein Beispiel für die Seite „ONTAP Cluster Details“ zeigt: Die Cluster-Management-IP-Adresse, der Benutzername und das Passwort."]
-
-+
-Beachten Sie, dass die Cluster-Management-IP-Adresse basierend auf Informationen aus dem Digital Wallet ausgefüllt wird.
-
-+
-Der Status des Clusters ändert sich auf der Seite _On-Premises ONTAP_ auf *entdeckt*.
-
-
-
-BlueXP erkennt den Cluster und fügt ihn unter Verwendung des Clusternamens als Namen der Arbeitsumgebung in Canvas einer Arbeitsumgebung hinzu.
-
-image:screenshot_onprem_cluster.png["Ein Screenshot eines On-Prem ONTAP Clusters im Canvas."]
-
-Sie können Services für dieses Cluster im rechten Fensterbereich aktivieren, um Daten vom und zum Cluster zu replizieren, Daten-Tiering in die Cloud einzurichten, Volumes in die Cloud zu sichern oder Compliance-Scans auf den Volumes durchzuführen. Sie können auch neue Volumes erstellen oder System Manager starten, um erweiterte Aufgaben auszuführen.
-
-
-
-=== Ermitteln von Clustern auf der Seite „Arbeitsfläche“
-
-Entdecken Sie Ihre ONTAP-Cluster und fügen Sie sie als Arbeitsumgebung von der Canvas-Seite aus hinzu. Diese Schritte können in Fällen verwendet werden, in denen das Cluster nicht in Digital Wallet aufgeführt ist, da es derzeit keinen Support-Vertrag hat.
-
-.Schritte
-. Klicken Sie auf der Seite Arbeitsfläche auf *Arbeitsumgebung hinzufügen* und wählen Sie *On-Premise ONTAP*.
+. Wählen Sie im Navigationsmenü die Option *Storage > Canvas* aus.
+. Klicken Sie auf der Seite Arbeitsfläche auf *Arbeitsumgebung hinzufügen* und wählen Sie *On-Premises*.
+. Wählen Sie *On-Premise ONTAP*.
 . Wenn Sie dazu aufgefordert werden, erstellen Sie einen Konnektor.
 +
-Weitere Informationen erhalten Sie über die obigen Links.
+Weitere Einzelheiten finden Sie in den oben genannten Anforderungen.
 
 . Geben Sie auf der Seite _ONTAP Cluster Details_ die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto ein, und klicken Sie auf *Hinzufügen*.
 +
@@ -146,4 +98,39 @@ image:screenshot_discover_ontap.png["Ein Screenshot, der ein Beispiel für die S
 
 BlueXP erkennt den Cluster und fügt ihn einer Arbeitsumgebung im Canvas hinzu.
 
-Sie können Services für dieses Cluster im rechten Fensterbereich aktivieren, um Daten vom und zum Cluster zu replizieren, Daten-Tiering in die Cloud einzurichten, Volumes in die Cloud zu sichern oder Compliance-Scans auf den Volumes durchzuführen. Sie können auch neue Volumes erstellen oder System Manager starten, um erweiterte Aufgaben auszuführen.
+link:task-manage-ontap-connector.html["Managen Sie die Cluster"].
+
+
+
+== Cluster direkt erkennen
+
+Ermitteln Sie direkt Ihre lokalen ONTAP Cluster von BlueXP, um die Cluster mithilfe des System Managers zu verwalten.
+
+
+TIP: Wenn Sie auf System Manager auf einem lokalen ONTAP-Cluster mit 9.12.1 oder höher mit Verbindung zum BlueXP-Service zugreifen, werden Sie aufgefordert, den Cluster direkt über BlueXP zu verwalten. Wenn Sie diese Eingabeaufforderung befolgen, wird der Cluster in BlueXP wie in diesem Abschnitt beschrieben erkannt.
+
+.Anforderungen
+* Sie sollten mit BlueXP loslegen, was die Anmeldung und Einrichtung eines Kontos umfasst.
++
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-overview.html["Erfahren Sie, wie Sie BlueXP zum Einsatz bringen"^]
+
+* Der lokale ONTAP-Cluster muss 9.12.1 oder höher mit Konnektivität zum BlueXP-Dienst (\https://bluexp.netapp.com) laufen.
+* Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto.
++
+BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewallrichtlinien verwenden, muss der ONTAP-Cluster eingehenden HTTPS-Zugriff über Port 443 ermöglichen.
+
++
+Die standardmäßige "mgmt"-Firewall-Richtlinie ermöglicht eingehenden HTTPS-Zugriff von allen IP-Adressen. Wenn Sie diese Standardrichtlinie geändert haben oder wenn Sie eine eigene Firewall-Richtlinie erstellt haben, müssen Sie das HTTPS-Protokoll mit dieser Richtlinie verknüpfen und den Zugriff über den Connector-Host aktivieren.
+
+
+
+.Schritte
+. Wählen Sie im Navigationsmenü die Option *Storage > Canvas* aus.
+. Klicken Sie auf der Seite Arbeitsfläche auf *Arbeitsumgebung hinzufügen* und wählen Sie *On-Premises*.
+. Wählen Sie *Lokales ONTAP (direkt)* aus.
+. Geben Sie die Cluster-Management-IP-Adresse, das Passwort für das Admin-Benutzerkonto ein, und klicken Sie auf *Hinzufügen*.
+
+
+BlueXP erkennt den Cluster und fügt ihn einer Arbeitsumgebung im Canvas hinzu.
+
+link:task-manage-ontap-direct.html["Managen Sie die Cluster"].

@@ -4,7 +4,7 @@ permalink: concept-aiq-digital-advisor.html
 keywords: concepts, active iq digital advisor, ontap 
 summary: Active IQ Digital Advisor ist in die Benutzeroberfläche von BlueXP integriert, sodass Sie den Betrieb, die Sicherheit und die Leistung Ihrer ONTAP Cluster über eine zentrale Konsole optimieren können. 
 ---
-= Optimieren Sie Ihre Cluster mit Digital Advisor
+= Optimierung von Clustern mit Digital Advisor
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -35,12 +35,6 @@ Mit Digital Advisor können Sie den Gesamtstatus Ihres Storage-Systems, allgemei
 == Unterstützte ONTAP-Systeme
 
 Digital Advisor bietet Informationen zu allen lokalen ONTAP-Systemen und Cloud Volumes ONTAP-Systemen in Ihrem NSS-Konto.
-
-
-
-== Kosten
-
-Die Verwendung dieses Services ist kostenlos über BlueXP.
 
 
 

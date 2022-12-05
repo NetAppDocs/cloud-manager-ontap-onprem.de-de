@@ -1,6 +1,6 @@
 ---
 settings:
-  name: On-prem ONTAP clusters
+  name: On-premises ONTAP clusters
   platform: cloud
   internal:
     pdf_enabled: true
@@ -11,20 +11,24 @@ settings:
   langs: de-de,us-en,ja-jp,zh-cn,zh-tw,ko-kr,fr-fr
 sidebar:
   entries:
-  - title: Lokale ONTAP-Cluster-Dokumentation
+  - title: ONTAP-Cluster-Dokumentation vor Ort
     url: "/index.html"
   - title: Versionshinweise
     url: "/whats-new.html"
   - title: Los geht's
     entries:
+    - title: ONTAP-Cluster-Management vor Ort
+      url: "/concept-onprem-ontap.html"
     - title: ONTAP Cluster erkennen
       url: "/task-discovering-ontap.html"
   - title: Management von lokalen ONTAP-Clustern
     entries:
-    - title: Management von lokalen ONTAP-Volumes
-      url: "/task-provisioning-ontap.html"
-    - title: Administration über System Manager
-      url: "/task-administer-advanced-view.html"
+    - title: Direktes Management von Clustern
+      url: "/task-manage-ontap-direct.html"
+    - title: Verwalten von Clustern, die über einen Connector erkannt wurden
+      url: "/task-manage-ontap-connector.html"
+    - title: Cluster-Informationen und Vertragsdetails
+      url: "/task-view-cluster-info.html"
     - title: Optimierung von Clustern mit Digital Advisor
       url: "/concept-aiq-digital-advisor.html"
     - title: Entfernen einer lokalen ONTAP-Arbeitsumgebung
@@ -41,18 +45,16 @@ homepage:
   tiles:
   - title: Los geht's
     links:
-    - title: Zeigen Sie erkannte und nicht erkannte On-Premises-Cluster an
-      url: task-discovering-ontap.html#viewing-discovered-and-undiscovered-on-prem-clusters
+    - title: ONTAP-Cluster-Management vor Ort
+      url: concept-onprem-ontap.html
     - title: ONTAP Cluster erkennen
       url: task-discovering-ontap.html
-    - title: Was ist neu
-      url: whats-new.html
   - title: Management von lokalen ONTAP-Clustern
     links:
-    - title: Volumes erstellen
-      url: task-provisioning-ontap.html
-    - title: Laden Sie die neue Festplatten- und Shelf-Firmware herunter
-      url: task-managing-ontap.html#downloading-new-disk-and-shelf-firmware
+    - title: Direktes Management von Clustern
+      url: task-manage-ontap-direct.html
+    - title: Verwalten von Clustern, die über einen Connector erkannt wurden
+      url: task-manage-ontap-connector.html
   - title: Blogs Community
     links:
     - title: NetApp Community

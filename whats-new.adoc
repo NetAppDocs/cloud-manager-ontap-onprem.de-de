@@ -18,6 +18,30 @@ Neue Funktionen für On-Prem ONTAP Cluster Management in BlueXP (ehemals Cloud M
 
 
 
+== Bis 4. Dezember 2022
+
+Die folgenden Änderungen wurden mit der Version 3.9.24 des Connectors eingeführt.
+
+
+
+=== Neue Möglichkeit zur Erkennung von ONTAP Clustern vor Ort
+
+Sie können Ihre On-Premises-ONTAP-Cluster jetzt direkt über einen Connector erkennen. Diese Option ermöglicht das Cluster Management nur über System Manager. In dieser Arbeitsumgebung können Sie keine BlueXP-Datenservices aktivieren.
+
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Erfahren Sie mehr über diese Option zur Erkennung und Verwaltung"].
+
+
+
+=== FlexGroup Volumes
+
+Bei On-Prem-ONTAP-Clustern, die über einen Connector erkannt werden, zeigt die Standardansicht in BlueXP jetzt die FlexGroup-Volumes an, die über den System Manager oder die ONTAP-CLI erstellt wurden. Sie können diese Volumes auch verwalten, indem Sie sie klonen, ihre Einstellungen bearbeiten und löschen.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-ontap-onprem/main/media/screenshot-flexgroup-volumes.png["Ein Screenshot, der ein FlexGroup-Volume auf der Seite „Volumes“ für ein ONTAP-Cluster vor Ort zeigt"]
+
+BlueXP unterstützt das Erstellen von FlexGroup Volumes nicht. Zum Erstellen von FlexGroup Volumes müssen Sie weiterhin System Manager oder die CLI verwenden.
+
+
+
 == 18. September 2022
 
 Die folgenden Änderungen wurden mit der Version 3.9.22 des Connectors eingeführt.

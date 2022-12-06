@@ -355,6 +355,31 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/de-de/cloud-manager-ontap-onprem/pdfs/sidebar/Versionshinweise.pdf" 
+            
+          >
+            <img src="/de-de/cloud-manager-ontap-onprem/images/pdf.png" alt="" width="16" height="16"/>
+            Versionshinweise
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
 
 
     
@@ -495,11 +520,27 @@
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Versionshinweise"
-      data-li-level="1#" 
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Versionshinweise</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Was ist neu"
+      data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/de-de/cloud-manager-ontap-onprem/whats-new.html">
-        Versionshinweise
+        Was ist neu
       </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Bekannte Einschränkungen"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/de-de/cloud-manager-ontap-onprem/reference-limitations.html">
+        Bekannte Einschränkungen
+      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Los geht's"
       data-li-level="1" 
@@ -667,7 +708,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-05 18:21:24 +0000">12/05/2022</time>
+    <time datetime="2022-12-06 18:09:35 +0000">12/06/2022</time>
     
   
 
@@ -703,7 +744,7 @@
 <p>Die Ansicht „Standard“, die grundlegende Volume-Vorgänge bereitstellt</p>
 </li>
 <li>
-<p>Die Ansicht „Erweitert“, die Management über System Manager bereitstellt</p>
+<p>Die erweiterte Ansicht für Management über System Manager (unterstützt von ONTAP 9.10.0 und höher)</p>
 </li>
 <li>
 <p>Integration in BlueXP-Datenservices für Datenreplizierung, Backup und Recovery, Datenklassifizierung und Daten-Tiering</p>
@@ -711,18 +752,18 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein.</p>
+<p>Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein. <a href="#cluster-mithilfe-eines-connectors-erkennen">Lesen Sie sich die Anforderungen und Schritt-für-Schritt-Anweisungen unten durch</a>.</p>
 </div>
 </div>
 </div>
 </dd>
 <dt class="hdlist1">Direkte Bestandsaufnahme</dt>
 <dd>
-<p>Mit dieser Option können Sie das Cluster mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar.</p>
+<p>Mit dieser Option können Sie das Cluster mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar. Die Standardansicht kann nicht verwendet werden, und Datenservices können nicht aktiviert werden.</p>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
-<p>Für diese Option ist kein Connector erforderlich.</p>
+<p>Für diese Option ist kein Connector erforderlich. <a href="#cluster-direkt-erkennen">Lesen Sie sich die Anforderungen und Schritt-für-Schritt-Anweisungen unten durch</a>.</p>
 </div>
 </div>
 </div>
@@ -731,6 +772,9 @@
 </div>
 <div class="paragraph">
 <p>Sobald die Cluster entdeckt wurden, stehen sie als Arbeitsumgebung auf dem BlueXP Canvas zur Verfügung.</p>
+</div>
+<div class="paragraph">
+<p>Wenn Sie sich entscheiden, die andere Discovery-Option zu einem späteren Zeitpunkt zu verwenden, müssen Sie den On-Prem-Cluster als separate Arbeitsumgebung auf dem Canvas entdecken. Sie haben dann die Möglichkeit, die andere Arbeitsumgebung zu entfernen.</p>
 </div>
 </div>
 </div>
@@ -770,9 +814,9 @@
 </li>
 <li>
 <p>Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto, um das Cluster zu BlueXP hinzuzufügen.</p>
-<div class="paragraph">
+</li>
+<li>
 <p>BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewall-Richtlinien verwenden, müssen diese die folgenden Anforderungen erfüllen:</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
@@ -822,7 +866,8 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>BlueXP erkennt den Cluster und fügt ihn einer Arbeitsumgebung im Canvas hinzu.</p>
+<div class="title">Ergebnis</div>
+<p>BlueXP entdeckt den Cluster und fügt ihn als Arbeitsumgebung auf dem Canvas hinzu.</p>
 </div>
 <div class="paragraph">
 <p><a href="task-manage-ontap-connector.html">"Managen Sie die Cluster"</a>.</p>
@@ -857,13 +902,19 @@ Wenn Sie auf System Manager auf einem lokalen ONTAP-Cluster mit 9.12.1 oder höh
 </div>
 </li>
 <li>
-<p>Der lokale ONTAP Cluster muss 9.12.1 oder höher mit Konnektivität zum BlueXP Service laufen.</p>
+<p>Das On-Premises-Cluster muss ONTAP 9.12.1 oder höher ausführen.</p>
+</li>
+<li>
+<p>Der Cluster muss über ein- und ausgehende Verbindungen zum BlueXP-Service verfügen:</p>
+<div class="paragraph">
+<p>https://cloudmanager.cloud.netapp.com/ontap-service/check-service-connection</p>
+</div>
 </li>
 <li>
 <p>Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto.</p>
-<div class="paragraph">
+</li>
+<li>
 <p>BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewallrichtlinien verwenden, muss der ONTAP-Cluster eingehenden HTTPS-Zugriff über Port 443 ermöglichen.</p>
-</div>
 <div class="paragraph">
 <p>Die standardmäßige "mgmt"-Firewall-Richtlinie ermöglicht eingehenden HTTPS-Zugriff von allen IP-Adressen. Wenn Sie diese Standardrichtlinie geändert haben oder wenn Sie eine eigene Firewall-Richtlinie erstellt haben, müssen Sie das HTTPS-Protokoll mit dieser Richtlinie verknüpfen und den Zugriff über den Connector-Host aktivieren.</p>
 </div>
@@ -888,7 +939,8 @@ Wenn Sie auf System Manager auf einem lokalen ONTAP-Cluster mit 9.12.1 oder höh
 </ol>
 </div>
 <div class="paragraph">
-<p>BlueXP erkennt den Cluster und fügt ihn einer Arbeitsumgebung im Canvas hinzu.</p>
+<div class="title">Ergebnis</div>
+<p>BlueXP entdeckt den Cluster und fügt ihn als Arbeitsumgebung auf dem Canvas hinzu.</p>
 </div>
 <div class="paragraph">
 <p><a href="task-manage-ontap-direct.html">"Managen Sie die Cluster"</a>.</p>

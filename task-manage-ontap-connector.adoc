@@ -28,7 +28,7 @@ Nachdem Sie Ihren lokalen ONTAP-Cluster von BlueXP mithilfe eines Connectors ent
 
 Mit BlueXP können Sie NFS- oder CIFS-Volumes auf vorhandenen Aggregaten erstellen. Neue Aggregate können auf einem lokalen ONTAP-Cluster nicht über die BlueXP-Standardansicht erstellt werden. Zum Erstellen von Aggregaten müssen Sie die Ansicht „Erweitert“ verwenden.
 
-Mit der BlueXP Funktion „Templates“ können Sie Volumes erstellen, die für bestimmte Workloads, wie Datenbanken oder Streaming-Services, optimiert sind. Wenn Ihr Unternehmen Volume-Vorlagen erstellt hat, die Sie verwenden sollten, folgen Sie den Anweisungen  volumes from templates,Diesen Schritten ausführen.
+Mit der BlueXP Funktion „Templates“ können Sie Volumes erstellen, die für bestimmte Workloads, wie Datenbanken oder Streaming-Services, optimiert sind. Wenn Ihr Unternehmen Volume-Vorlagen erstellt hat, die Sie verwenden sollten, folgen Sie den Anweisungen <<Erstellen Sie Volumes aus Vorlagen,Diesen Schritten ausführen>>.
 
 .Schritte
 . Wählen Sie im Navigationsmenü die Option *Storage > Canvas* aus.
@@ -108,11 +108,12 @@ image:screenshot_define_ontap_vol_from_template.png["Ein Screenshot mit einer le
 . Im Bereich _context_ wird die Arbeitsumgebung mit dem Namen der Arbeitsumgebung ausgefüllt, mit der Sie begonnen haben. Sie müssen das *Storage VM* und *Aggregat* auswählen, wo das Volume erstellt wird.
 . Fügen Sie Werte für alle Parameter hinzu, die nicht hartcodiert sind.
 +
- volumes,Erfahren Sie mehr über die Parameter, die Sie zum Erstellen des Volumes benötigen.
+<<Volumes erstellen,Erfahren Sie mehr über die Parameter, die Sie zum Erstellen des Volumes benötigen>>.
 
 . Klicken Sie auf *Ausführungsvorlage*, nachdem Sie alle für dieses Volume erforderlichen Parameter definiert haben.
 
 
+.Ergebnis
 BlueXP stellt das Volume bereit und zeigt eine Seite an, so dass Sie den Fortschritt sehen können.
 
 image:screenshot_template_creating_resource_ontap.png["Ein Screenshot zeigt den Fortschritt der Erstellung Ihres neuen Volumes aus der Vorlage."]
@@ -121,6 +122,7 @@ Dann wird das neue Volume zur Arbeitsumgebung hinzugefügt.
 
 Außerdem werden, wenn sekundäre Aktionen in der Vorlage implementiert werden, z. B. wenn Sie Cloud Backup für das Volume aktivieren, diese Aktion ausgeführt.
 
+.Nachdem Sie fertig sind
 Wenn Sie eine CIFS-Freigabe bereitgestellt haben, erteilen Sie Benutzern oder Gruppen Berechtigungen für die Dateien und Ordner, und überprüfen Sie, ob diese Benutzer auf die Freigabe zugreifen und eine Datei erstellen können.
 
 
@@ -171,25 +173,9 @@ Die Integration von System Manager wird in GovCloud Regionen oder Regionen ohne 
 
 === Einschränkungen
 
-Einige System Manager-Funktionen werden bei lokalen ONTAP-Clustern nicht unterstützt, wenn Sie die erweiterte Ansicht in BlueXP verwenden:
+Einige System Manager-Funktionen werden bei lokalen ONTAP-Clustern nicht unterstützt, wenn Sie die erweiterte Ansicht in BlueXP verwenden.
 
-* Cluster-Einrichtung
-+
-Nachdem Sie die Management-IP-Adresse festgelegt und das Admin-Passwort für einen On-Prem ONTAP-Cluster konfiguriert haben, können Sie das Cluster in BlueXP erkennen und dann mit der Cluster-Einrichtung in der erweiterten Ansicht fortfahren.
-
-* Cloud-Backup-Aktivierung
-+
-Cloud Backup in einem lokalen Cluster direkt aus dem Cloud Backup aktivieren https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html["Erste Schritte"^].
-
-* On-Demand-Upgrades
-+
-Firmware und Software können nicht nach Bedarf aktualisiert werden.
-
-* Rollenbasierte Zugriffssteuerung
-+
-Die rollenbasierte Zugriffssteuerung über System Manager wird nicht unterstützt.
-
-
+link:reference-limitations.html["Überprüfen Sie die Liste der Einschränkungen"].
 
 
 

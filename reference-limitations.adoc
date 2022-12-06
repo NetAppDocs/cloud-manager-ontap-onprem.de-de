@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations.html 
+keywords: limitations, system manager, unsupported features 
+summary: Bekannte Einschränkungen identifizieren Plattformen, Geräte oder Funktionen, die von dieser Version des Produkts nicht unterstützt werden oder nicht korrekt mit dem Produkt zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch. 
+---
+= Bekannte Einschränkungen
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Bekannte Einschränkungen identifizieren Plattformen, Geräte oder Funktionen, die von dieser Version des Produkts nicht unterstützt werden oder nicht korrekt mit dem Produkt zusammenarbeiten. Lesen Sie diese Einschränkungen sorgfältig durch.
+
+Einige System Manager-Funktionen werden von BlueXP nicht unterstützt:
+
+* Cluster-Einrichtung
++
+Nachdem Sie die Management-IP-Adresse festgelegt und das Admin-Passwort in einem On-Prem ONTAP-Cluster konfiguriert haben, können Sie das Cluster in BlueXP erkennen.
+
+* Rollenbasierte Zugriffssteuerung (nur Connector)
++
+Die rollenbasierte Zugriffssteuerung über den System-Manager wird nicht unterstützt, wenn ein lokales ONTAP-Cluster mithilfe eines Connectors erkannt und gemanagt wird. Sie werden aufgefordert, während der Bestandsaufnahme Ihre Admin-Anmeldedaten einzugeben. Diese Anmeldedaten werden für alle aus System Manager ergriffenen Aktionen verwendet.
+
++
+Bei der Option Direct Discovery werden Sie aufgefordert, sich bei jedem Öffnen der Arbeitsumgebung mit Ihren ONTAP-Anmeldedaten einzuloggen.
+
+* Cloud-Backup-Aktivierung
++
+Cloud Backup in einem lokalen Cluster direkt aus dem Cloud Backup aktivieren https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html["Erste Schritte"^]
+
+* On-Demand-Upgrades
++
+Firmware und Software können nicht nach Bedarf aktualisiert werden.
+
+* Globale Suche
+* Benutzeroberflächeneinstellungen
+

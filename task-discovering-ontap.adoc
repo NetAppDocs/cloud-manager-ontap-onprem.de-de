@@ -26,22 +26,24 @@ Erkennung über einen Konnektor:: Diese Option ermöglicht das Verwalten des Clu
 +
 --
 * Die Ansicht „Standard“, die grundlegende Volume-Vorgänge bereitstellt
-* Die Ansicht „Erweitert“, die Management über System Manager bereitstellt
+* Die erweiterte Ansicht für Management über System Manager (unterstützt von ONTAP 9.10.0 und höher)
 * Integration in BlueXP-Datenservices für Datenreplizierung, Backup und Recovery, Datenklassifizierung und Daten-Tiering
 
 
-Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein.
+Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein. <<Cluster mithilfe eines Connectors erkennen,Lesen Sie sich die Anforderungen und Schritt-für-Schritt-Anweisungen unten durch>>.
 
 --
-Direkte Bestandsaufnahme:: Mit dieser Option können Sie das Cluster mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar.
+Direkte Bestandsaufnahme:: Mit dieser Option können Sie das Cluster mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar. Die Standardansicht kann nicht verwendet werden, und Datenservices können nicht aktiviert werden.
 +
 --
-Für diese Option ist kein Connector erforderlich.
+Für diese Option ist kein Connector erforderlich. <<Cluster direkt erkennen,Lesen Sie sich die Anforderungen und Schritt-für-Schritt-Anweisungen unten durch>>.
 
 --
 
 
 Sobald die Cluster entdeckt wurden, stehen sie als Arbeitsumgebung auf dem BlueXP Canvas zur Verfügung.
+
+Wenn Sie sich entscheiden, die andere Discovery-Option zu einem späteren Zeitpunkt zu verwenden, müssen Sie den On-Prem-Cluster als separate Arbeitsumgebung auf dem Canvas entdecken. Sie haben dann die Möglichkeit, die andere Arbeitsumgebung zu entfernen.
 
 
 
@@ -65,9 +67,7 @@ Wenn kalte Daten in die Cloud verschoben werden sollen, sollten Sie die Anforder
 
 
 * Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto, um das Cluster zu BlueXP hinzuzufügen.
-+
-BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewall-Richtlinien verwenden, müssen diese die folgenden Anforderungen erfüllen:
-
+* BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewall-Richtlinien verwenden, müssen diese die folgenden Anforderungen erfüllen:
 +
 ** Der Connector-Host muss ausgehenden HTTPS-Zugriff über Port 443 ermöglichen.
 +
@@ -96,7 +96,8 @@ image:screenshot_discover_ontap.png["Ein Screenshot, der ein Beispiel für die S
 . Geben Sie auf der Seite _Details & Anmeldeinformationen_ einen Namen und eine Beschreibung für die Arbeitsumgebung ein, und klicken Sie dann auf *Go*.
 
 
-BlueXP erkennt den Cluster und fügt ihn einer Arbeitsumgebung im Canvas hinzu.
+.Ergebnis
+BlueXP entdeckt den Cluster und fügt ihn als Arbeitsumgebung auf dem Canvas hinzu.
 
 link:task-manage-ontap-connector.html["Managen Sie die Cluster"].
 
@@ -114,11 +115,13 @@ TIP: Wenn Sie auf System Manager auf einem lokalen ONTAP-Cluster mit 9.12.1 oder
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-overview.html["Erfahren Sie, wie Sie BlueXP zum Einsatz bringen"^]
 
-* Der lokale ONTAP Cluster muss 9.12.1 oder höher mit Konnektivität zum BlueXP Service laufen.
-* Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto.
+* Das On-Premises-Cluster muss ONTAP 9.12.1 oder höher ausführen.
+* Der Cluster muss über ein- und ausgehende Verbindungen zum BlueXP-Service verfügen:
 +
-BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewallrichtlinien verwenden, muss der ONTAP-Cluster eingehenden HTTPS-Zugriff über Port 443 ermöglichen.
+\https://cloudmanager.cloud.netapp.com/ontap-service/check-service-connection
 
+* Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto.
+* BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewallrichtlinien verwenden, muss der ONTAP-Cluster eingehenden HTTPS-Zugriff über Port 443 ermöglichen.
 +
 Die standardmäßige "mgmt"-Firewall-Richtlinie ermöglicht eingehenden HTTPS-Zugriff von allen IP-Adressen. Wenn Sie diese Standardrichtlinie geändert haben oder wenn Sie eine eigene Firewall-Richtlinie erstellt haben, müssen Sie das HTTPS-Protokoll mit dieser Richtlinie verknüpfen und den Zugriff über den Connector-Host aktivieren.
 
@@ -131,6 +134,7 @@ Die standardmäßige "mgmt"-Firewall-Richtlinie ermöglicht eingehenden HTTPS-Zu
 . Geben Sie die Cluster-Management-IP-Adresse, das Passwort für das Admin-Benutzerkonto ein, und klicken Sie auf *Hinzufügen*.
 
 
-BlueXP erkennt den Cluster und fügt ihn einer Arbeitsumgebung im Canvas hinzu.
+.Ergebnis
+BlueXP entdeckt den Cluster und fügt ihn als Arbeitsumgebung auf dem Canvas hinzu.
 
 link:task-manage-ontap-direct.html["Managen Sie die Cluster"].

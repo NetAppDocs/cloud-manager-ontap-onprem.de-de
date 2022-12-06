@@ -16,18 +16,17 @@ summary: Wenn Sie Ihren lokalen ONTAP-Cluster direkt ohne Connector entdeckt hab
 [role="lead"]
 Wenn Sie Ihren lokalen ONTAP-Cluster direkt ohne Connector entdeckt haben, können Sie die Arbeitsumgebung öffnen, in der das Cluster gemanagt werden soll, mit System Manager.
 
-Die folgenden System Manager Funktionen sind nicht verfügbar:
+.Einschränkungen
+Einige System Manager-Funktionen werden von BlueXP nicht unterstützt.
 
-* Globale Suche
-* Die Integration von Digital Advisor (ehemals Active IQ) umfasst Risiken und Informationen zur Problembehebung, den Verlauf der Kapazitätsauslastung, Benachrichtigungen zur Firmware-Verfügbarkeit sowie die Möglichkeit, offene Support-Cases anzuzeigen
-* Benutzeroberflächeneinstellungen
-* Cloud-Widget
-* Manuelle Upgrades von ONTAP und Firmware
-* Integration von Cloud-Backup
-
+link:reference-limitations.html["Überprüfen Sie die Liste der Einschränkungen"].
 
 .Schritte
 . Doppelklicken Sie auf der Seite „Arbeitsfläche“ auf den Namen einer ONTAP-Arbeitsumgebung vor Ort.
+. Geben Sie bei der entsprechenden Eingabeaufforderung Ihre ONTAP-Anmeldedaten ein.
++
+Sie müssen sich bei jedem Öffnen der Arbeitsumgebung mit Ihren ONTAP-Anmeldeinformationen anmelden.
+
 . Verwenden Sie System Manager zum Verwalten von ONTAP.
 +
 Wenn Sie Hilfe bei der Verwendung von System Manager mit ONTAP benötigen, finden Sie unter https://docs.netapp.com/us-en/ontap/index.html["ONTAP-Dokumentation"^] Schritt-für-Schritt-Anleitungen. Hier sind einige Links, die helfen könnten:

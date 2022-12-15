@@ -442,4 +442,6 @@
   <block id="059eb0e13bd9e186363bedd175a5226b" category="list-text">Geben Sie bei der entsprechenden Eingabeaufforderung Ihre ONTAP-Anmeldedaten ein.</block>
   <block id="e62e400b7f916eb360e1c51ccb93a44f" category="paragraph">Sie müssen sich bei jedem Öffnen der Arbeitsumgebung mit Ihren ONTAP-Anmeldeinformationen anmelden.</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">Was ist neu</block>
+  <block id="03be90bdc455bf51f8b56b71203c2e11" category="list-text">Der Computer, den Sie für den Zugriff auf die BlueXP-Konsole verwenden, muss über eine Netzwerkverbindung mit dem lokalen ONTAP-Cluster verfügen, ähnlich wie Sie Verbindungen zu anderen Ressourcen in Ihrem privaten Netzwerk bereitstellen würden.</block>
+  <block id="9b97b7bd5e0a87be7bf218224ada83cf" category="paragraph-title">Anforderungen</block>
 </blocks>

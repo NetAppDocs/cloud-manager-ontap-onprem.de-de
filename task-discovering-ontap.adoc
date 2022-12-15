@@ -120,6 +120,7 @@ https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-overview.html["E
 +
 \https://cloudmanager.cloud.netapp.com/ontap-service/check-service-connection
 
+* Der Computer, den Sie für den Zugriff auf die BlueXP-Konsole verwenden, muss über eine Netzwerkverbindung mit dem lokalen ONTAP-Cluster verfügen, ähnlich wie Sie Verbindungen zu anderen Ressourcen in Ihrem privaten Netzwerk bereitstellen würden.
 * Sie benötigen die Cluster-Management-IP-Adresse und das Passwort für das Admin-Benutzerkonto.
 * BlueXP erkennt ONTAP-Cluster mithilfe von HTTPS. Wenn Sie benutzerdefinierte Firewallrichtlinien verwenden, muss der ONTAP-Cluster eingehenden HTTPS-Zugriff über Port 443 ermöglichen.
 +

@@ -22,7 +22,7 @@ Entdecken Sie On-Prem ONTAP-Cluster von BlueXP, damit Sie mit dem ONTAP System M
 
 BlueXP bietet zwei Möglichkeiten zum Erkennen und Managen Ihrer lokalen ONTAP-Cluster:
 
-Erkennung über einen Konnektor:: Mit dieser Option können Sie Cluster, auf denen ONTAP 8.3 ausgeführt wird, mithilfe der folgenden Funktionen verwalten:
+Erkennung über einen Konnektor:: Mit dieser Option können Sie Cluster mit ONTAP 8.3 und höher verwalten, indem Sie die folgenden Funktionen verwenden:
 +
 --
 * Die Ansicht „Standard“, die grundlegende Volume-Vorgänge bereitstellt

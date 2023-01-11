@@ -449,7 +449,7 @@
   <block id="a3712341ec8d6b2a8227c05fca90e65c" category="paragraph">Sie müssen sich bei jedem Öffnen der Arbeitsumgebung mit Ihren ONTAP-Anmeldeinformationen anmelden. Sie haben die Möglichkeit, die Anmeldeinformationen zu speichern, damit Sie sie nicht jedes Mal eingeben müssen. Wenn Sie diese Option verwenden, werden die Anmeldeinformationen ausschließlich Ihrem BlueXP-Benutzer zugeordnet. Sie werden nicht von anderen Personen in Ihrem Konto gespeichert.</block>
   <block id="c4d0d6d40840ebb3d4f4f87b4309d6b6" category="inline-image-macro">In einem Screenshot, der die Eingabeaufforderung angezeigt wird, um den Benutzernamen und das Passwort für ein ONTAP Cluster einzugeben.</block>
   <block id="ae0f0582f8fc53d392de639973d7187a" category="paragraph"><block ref="ae0f0582f8fc53d392de639973d7187a" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="2a921d78113b3701fe44f302cea12ade" category="list-text">Mit dieser Option können Sie Cluster, auf denen ONTAP 8.3 ausgeführt wird, mithilfe der folgenden Funktionen verwalten:</block>
   <block id="085602a04bf66e6b72300eefb21c9c32" category="list-text">Mit dieser Option können Sie Cluster mit ONTAP 9.12.1 und höher mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar. Die Standardansicht kann nicht verwendet werden, und Datenservices können nicht aktiviert werden.</block>
   <block id="8ab7236e714d67d0d2cdb0f6c0c6bdea" category="list-text">Das On-Premises-Cluster muss ONTAP 8.3 oder höher ausführen.</block>
+  <block id="a3736487d08fb63c22adeaf7035f0bca" category="list-text">Mit dieser Option können Sie Cluster mit ONTAP 8.3 und höher verwalten, indem Sie die folgenden Funktionen verwenden:</block>
 </blocks>

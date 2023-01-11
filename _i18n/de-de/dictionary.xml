@@ -329,7 +329,6 @@
   <block id="e96ffca10c8548ba223da5a961f4e0bb" category="section-title">Discovery- und Management-Optionen</block>
   <block id="a8b4b8a9fc6c5671a89f402cc069afda" category="paragraph">BlueXP bietet zwei Möglichkeiten zum Erkennen und Managen Ihrer lokalen ONTAP-Cluster:</block>
   <block id="a8fd54ba8c2928ea1b2a300ca75a00fa" category="list-text">Erkennung über einen Konnektor</block>
-  <block id="9099bf7c5b970d6d29d762b19812bc2a" category="list-text">Diese Option ermöglicht das Verwalten des Clusters mithilfe der folgenden Funktionen:</block>
   <block id="dad407e605b93746e62dec356ab5303e" category="list-text">Die Ansicht „Standard“, die grundlegende Volume-Vorgänge bereitstellt</block>
   <block id="90050bf1ae850c8b086b4d648fb45152" category="list-text">Integration in BlueXP-Datenservices für Datenreplizierung, Backup und Recovery, Datenklassifizierung und Daten-Tiering</block>
   <block id="95ef150c4c1c6bc6be1dda757b58c70c" category="paragraph">Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein.</block>
@@ -422,7 +421,6 @@
   <block id="05280ae0f52dfc03d23962982cf79f21" category="list-text">Die erweiterte Ansicht für Management über System Manager (unterstützt von ONTAP 9.10.0 und höher)</block>
   <block id="18913a11bfb9265ce650e9b06d80da69" category="inline-xref">Lesen Sie sich die Anforderungen und Schritt-für-Schritt-Anweisungen unten durch</block>
   <block id="b96973ab12dad5cf917d59fa426d501e" category="paragraph">Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein. <block ref="578fb4b6eccb6dc6ce978336e196fff7" category="inline-xref-macro-rx"></block>.</block>
-  <block id="48162a37cddfdaa963ac3204f7595591" category="list-text">Mit dieser Option können Sie das Cluster mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar. Die Standardansicht kann nicht verwendet werden, und Datenservices können nicht aktiviert werden.</block>
   <block id="be7a52baf7d7b7389782214033190cd4" category="paragraph">Für diese Option ist kein Connector erforderlich. <block ref="0820951a94f165da4a5239e04ce4e106" category="inline-xref-macro-rx"></block>.</block>
   <block id="797c4c6d452fc60610219b263c22393d" category="paragraph">Wenn Sie sich entscheiden, die andere Discovery-Option zu einem späteren Zeitpunkt zu verwenden, müssen Sie den On-Prem-Cluster als separate Arbeitsumgebung auf dem Canvas entdecken. Sie haben dann die Möglichkeit, die andere Arbeitsumgebung zu entfernen.</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">Ergebnis</block>
@@ -451,4 +449,7 @@
   <block id="a3712341ec8d6b2a8227c05fca90e65c" category="paragraph">Sie müssen sich bei jedem Öffnen der Arbeitsumgebung mit Ihren ONTAP-Anmeldeinformationen anmelden. Sie haben die Möglichkeit, die Anmeldeinformationen zu speichern, damit Sie sie nicht jedes Mal eingeben müssen. Wenn Sie diese Option verwenden, werden die Anmeldeinformationen ausschließlich Ihrem BlueXP-Benutzer zugeordnet. Sie werden nicht von anderen Personen in Ihrem Konto gespeichert.</block>
   <block id="c4d0d6d40840ebb3d4f4f87b4309d6b6" category="inline-image-macro">In einem Screenshot, der die Eingabeaufforderung angezeigt wird, um den Benutzernamen und das Passwort für ein ONTAP Cluster einzugeben.</block>
   <block id="ae0f0582f8fc53d392de639973d7187a" category="paragraph"><block ref="ae0f0582f8fc53d392de639973d7187a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2a921d78113b3701fe44f302cea12ade" category="list-text">Mit dieser Option können Sie Cluster, auf denen ONTAP 8.3 ausgeführt wird, mithilfe der folgenden Funktionen verwalten:</block>
+  <block id="085602a04bf66e6b72300eefb21c9c32" category="list-text">Mit dieser Option können Sie Cluster mit ONTAP 9.12.1 und höher mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar. Die Standardansicht kann nicht verwendet werden, und Datenservices können nicht aktiviert werden.</block>
+  <block id="8ab7236e714d67d0d2cdb0f6c0c6bdea" category="list-text">Das On-Premises-Cluster muss ONTAP 8.3 oder höher ausführen.</block>
 </blocks>

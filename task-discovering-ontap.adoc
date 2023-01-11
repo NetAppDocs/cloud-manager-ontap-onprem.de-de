@@ -22,7 +22,7 @@ Entdecken Sie On-Prem ONTAP-Cluster von BlueXP, damit Sie mit dem ONTAP System M
 
 BlueXP bietet zwei Möglichkeiten zum Erkennen und Managen Ihrer lokalen ONTAP-Cluster:
 
-Erkennung über einen Konnektor:: Diese Option ermöglicht das Verwalten des Clusters mithilfe der folgenden Funktionen:
+Erkennung über einen Konnektor:: Mit dieser Option können Sie Cluster, auf denen ONTAP 8.3 ausgeführt wird, mithilfe der folgenden Funktionen verwalten:
 +
 --
 * Die Ansicht „Standard“, die grundlegende Volume-Vorgänge bereitstellt
@@ -33,7 +33,7 @@ Erkennung über einen Konnektor:: Diese Option ermöglicht das Verwalten des Clu
 Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein. <<Cluster mithilfe eines Connectors erkennen,Lesen Sie sich die Anforderungen und Schritt-für-Schritt-Anweisungen unten durch>>.
 
 --
-Direkte Bestandsaufnahme:: Mit dieser Option können Sie das Cluster mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar. Die Standardansicht kann nicht verwendet werden, und Datenservices können nicht aktiviert werden.
+Direkte Bestandsaufnahme:: Mit dieser Option können Sie Cluster mit ONTAP 9.12.1 und höher mit System Manager verwalten. Es sind keine anderen Management-Optionen verfügbar. Die Standardansicht kann nicht verwendet werden, und Datenservices können nicht aktiviert werden.
 +
 --
 Für diese Option ist kein Connector erforderlich. <<Cluster direkt erkennen,Lesen Sie sich die Anforderungen und Schritt-für-Schritt-Anweisungen unten durch>>.
@@ -56,6 +56,7 @@ Entdecken Sie Ihre ONTAP-Cluster vor Ort mit einem Connector, damit Sie von alle
 +
 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-overview.html["Erfahren Sie, wie Sie BlueXP zum Einsatz bringen"^]
 
+* Das On-Premises-Cluster muss ONTAP 8.3 oder höher ausführen.
 * Ein Connector muss bei einem Cloud-Provider oder vor Ort installiert sein.
 +
 Wenn kalte Daten in die Cloud verschoben werden sollen, sollten Sie die Anforderungen für den Connector prüfen, je nachdem, wo Sie kalte Daten Tiering möchten.
